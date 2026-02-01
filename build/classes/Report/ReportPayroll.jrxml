@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="979d4476-3a48-4e67-a93c-dcfee193921c">
+	<property name="ireport.zoom" value="1.3310000000000008"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT p.id, k.nip, p.bulan, p.tahun, p.gaji_pokok, p.tunjangan, p.potongan, p.total_gaji FROM payroll p JOIN karyawan k ON p.karyawan_id = k.id ORDER BY p.tahun DESC, p.bulan DESC]]>
+	</queryString>
+	<field name="nip" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="bulan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tahun" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="gaji_pokok" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tunjangan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="potongan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_gaji" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="305" y="0" width="250" height="58" uuid="5f5b8362-59e3-44b0-bdb0-81d4bd1c9be7"/>
+				<text><![CDATA[Menara Utara 9th Floor,Menara Jamsostek.
+Jl. Jend. Gatot Subroto Kav. 38, Jakarta Selatan 12710
+tel: +6221 529 06 520 | fax: +6221 529 06 521
+www.linkit360.com]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="150" height="30" uuid="26b66691-0a8a-4345-b009-18ed10b21ba4"/>
+				<imageExpression><![CDATA[getClass()
+    .getResource("/images/logo_linkit_hi_icon.jpg")
+    .toString()]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="209" y="0" width="159" height="35" uuid="fa729a5b-e8ca-44e8-a7ee-bda64cf0f811"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Report Payroll]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="41" width="64" height="20" uuid="9b40e19d-465a-4b3c-846f-5ea68064e435"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[NIP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="64" y="41" width="52" height="20" uuid="c2cc8f75-ed75-4a94-9a67-8ccb018babca"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Bulan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="116" y="41" width="66" height="20" uuid="1f051877-7788-47be-96e0-141d3b84621c"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Tahun]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="182" y="41" width="91" height="20" uuid="57b4eaa9-9630-44ec-940c-e45552eeb281"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Gaji Pokok]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="273" y="41" width="91" height="20" uuid="82ba0987-fb4d-4c90-bbc6-739909f7c57f"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Tunjangan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="364" y="41" width="92" height="20" uuid="8e264b71-c276-4dae-bb4d-d70a3004dc2d"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Potongan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="456" y="41" width="99" height="20" uuid="7830e3d1-4966-42ee-a532-f5a742c0d54f"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Total Gaji]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="64" height="20" uuid="db2be19a-2b3b-404d-bcf7-9e0ca8f733ed"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nip}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="64" y="0" width="52" height="20" uuid="c1696e88-bfb0-4bed-bacd-7da86cd42bbb"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{bulan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="116" y="0" width="66" height="20" uuid="ff7810b5-426d-49ab-a7e1-ec13245a5a29"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{tahun}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="182" y="0" width="91" height="20" uuid="9cd73ccc-ea1c-4a9c-8548-5e4078f8e2aa"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{gaji_pokok}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="273" y="0" width="91" height="20" uuid="fa423e43-7248-44b4-a4cc-f9d35e2832bc"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{tunjangan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="364" y="0" width="92" height="20" uuid="62aecd07-af44-4aca-b4d9-7f73fd2e4e97"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{potongan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="456" y="0" width="99" height="20" uuid="ffbf3309-21d3-4b52-aa15-9cb781ad5686"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{total_gaji}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="118" splitType="Stretch">
+			<staticText>
+				<reportElement x="403" y="98" width="152" height="20" uuid="5d0eb568-c552-4236-aa51-091c59bc0e46"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Meytika Fitria]]></text>
+			</staticText>
+			<textField pattern="EEEE, dd MMMM yyyy">
+				<reportElement x="403" y="0" width="152" height="22" uuid="5b10a806-55ec-4a48-9688-0d72204630f1"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[new SimpleDateFormat(
+    "'Jakarta, 'EEEE, dd MMMMM yyyy",
+    new java.util.Locale("id")
+).format(new java.util.Date())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="403" y="22" width="152" height="20" uuid="f2f6c78f-5cbb-4e7d-b874-7f2405b787a1"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[HR OFFICER]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
