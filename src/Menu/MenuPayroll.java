@@ -91,7 +91,7 @@ public class MenuPayroll extends javax.swing.JPanel {
 
             },
             new String [] {
-                "id", "NIP", "Bulan", "Tahun", "Gaji Pokok", "Tunjangan", "Potongan", "Total Gaji"
+                "id", "NIP", "Nama", "Bulan", "Tahun", "Gaji Pokok", "Tunjangan", "Potongan", "Total Gaji"
             }
         ));
         tblPayroll.setRowHeight(40);
@@ -199,11 +199,11 @@ public class MenuPayroll extends javax.swing.JPanel {
         DialogPayrollAddEdit dialog = setupDialog();
         String kode = tblPayroll.getValueAt(row, 0).toString();
         String nip = tblPayroll.getValueAt(row, 1).toString();
-        String bulan = tblPayroll.getValueAt(row, 2).toString();
-        String tahun = tblPayroll.getValueAt(row, 3).toString();
-        double gajiPokok = Double.parseDouble(tblPayroll.getValueAt(row, 4).toString());
-        double tunjangan = Double.parseDouble(tblPayroll.getValueAt(row, 5).toString());
-        double potongan  = Double.parseDouble(tblPayroll.getValueAt(row, 6).toString());
+        String bulan = tblPayroll.getValueAt(row, 3).toString();
+        String tahun = tblPayroll.getValueAt(row, 4).toString();
+        double gajiPokok = Double.parseDouble(tblPayroll.getValueAt(row, 5).toString());
+        double tunjangan = Double.parseDouble(tblPayroll.getValueAt(row, 6).toString());
+        double potongan  = Double.parseDouble(tblPayroll.getValueAt(row, 7).toString());
         dialog.setData(kode, nip, bulan, tahun, gajiPokok,tunjangan,potongan);
         dialog.setVisible(true);
     }//GEN-LAST:event_btnEditActionPerformed
@@ -259,7 +259,7 @@ public class MenuPayroll extends javax.swing.JPanel {
     private void loadData() {
         String sql;
 
-        sql = "SELECT  p.id, k.nip, p.bulan, p.tahun, p.gaji_pokok, p.tunjangan,  p.potongan, p.total_gaji " +
+        sql = "SELECT  p.id, k.nip,k.nama, p.bulan, p.tahun, p.gaji_pokok, p.tunjangan,  p.potongan, p.total_gaji " +
             "FROM payroll p " +
             "JOIN karyawan k ON p.karyawan_id = k.id " +
             "ORDER BY p.tahun DESC, p.bulan DESC;";
@@ -267,6 +267,7 @@ public class MenuPayroll extends javax.swing.JPanel {
         Object[] Baris = {
             "id	",
             "NIP",
+            "Nama",
             "Bulan",
             "Tahun",
             "Gaji Pokok",
@@ -293,6 +294,7 @@ public class MenuPayroll extends javax.swing.JPanel {
                 String[] data = {
                     hasil.getString("id"),
                     hasil.getString("nip"),
+                    hasil.getString("nama"),
                     hasil.getString("bulan"),
                     hasil.getString("tahun"),
                     hasil.getString("gaji_pokok"),

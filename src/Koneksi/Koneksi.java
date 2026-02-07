@@ -26,7 +26,7 @@ public class Koneksi {
        String url = "jdbc:mysql://localhost/sistem_hr";
         
         try{
-            koneksi = (Connection) DriverManager.getConnection(url,"root","");
+            koneksi = (Connection) DriverManager.getConnection(url,"root","root");
             System.out.println("Berhasil Koneksi Database!");
         }catch(SQLException ex){
             System.out.println("Gagal koneksi Database! "+ex);

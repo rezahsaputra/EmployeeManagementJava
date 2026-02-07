@@ -79,7 +79,7 @@ public class MenuEmployeeAssesment extends javax.swing.JPanel {
 
             },
             new String [] {
-                "id", "Nip", "Periode", "Kerajinan", "Kedisiplinan", "Target Kerja", "Catatan"
+                "id", "Nip", "Nama", "Periode", "Kerajinan", "Kedisiplinan", "Target Kerja", "Catatan"
             }
         ));
         tblKaryawan.setRowHeight(40);
@@ -186,11 +186,11 @@ public class MenuEmployeeAssesment extends javax.swing.JPanel {
         DialogEmployeeAssesmentAddEdit dialog = setupDialog();
         String kode = tblKaryawan.getValueAt(row, 0).toString();
         String nip = tblKaryawan.getValueAt(row, 1).toString();
-        String periode = tblKaryawan.getValueAt(row, 2).toString();
-        String kerajinan = tblKaryawan.getValueAt(row, 3).toString();
-        String kedisiplinan = tblKaryawan.getValueAt(row, 4).toString();
-        String targetkerja = tblKaryawan.getValueAt(row, 5).toString();
-        String catatankerja = tblKaryawan.getValueAt(row, 6).toString();
+        String periode = tblKaryawan.getValueAt(row, 3).toString();
+        String kerajinan = tblKaryawan.getValueAt(row, 4).toString();
+        String kedisiplinan = tblKaryawan.getValueAt(row, 5).toString();
+        String targetkerja = tblKaryawan.getValueAt(row, 6).toString();
+        String catatankerja = tblKaryawan.getValueAt(row, 7).toString();
         dialog.setData(kode,nip,periode,kerajinan,kedisiplinan,targetkerja,catatankerja);
         dialog.setVisible(true);
     }//GEN-LAST:event_btnEditActionPerformed
@@ -240,10 +240,11 @@ public class MenuEmployeeAssesment extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void loadData() {
-        String sql = "SELECT p.id,p.karyawan_id,p.periode,p.kerajinan,p.kedisiplinan,p.target_kerja,p.catatan,k.nip FROM penilaian p left join karyawan k on k.id = p.karyawan_id  ORDER BY id DESC";
+        String sql = "SELECT p.id,p.karyawan_id,p.periode,p.kerajinan,p.kedisiplinan,p.target_kerja,p.catatan,k.nip,k.nama FROM penilaian p left join karyawan k on k.id = p.karyawan_id  ORDER BY id DESC";
         Object[] Baris = {
             "id",
             "Nip",
+            "Nama",
             "Periode",
             "Kerajinan",
             "Kedisplinan",
@@ -268,6 +269,7 @@ public class MenuEmployeeAssesment extends javax.swing.JPanel {
                 String[] data = {
                     hasil.getString("id"),
                     hasil.getString("nip"),
+                    hasil.getString("nama"),
                     hasil.getString("periode"),
                     hasil.getString("kerajinan"),
                     hasil.getString("kedisiplinan"),

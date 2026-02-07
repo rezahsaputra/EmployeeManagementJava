@@ -44,6 +44,9 @@ public class MenuResign extends javax.swing.JPanel {
             btnApprove.setVisible(false);
             btnReject.setVisible(false);
         }
+        else {
+            btnAdd.setVisible(false);
+        }
         loadData();
     }
 
@@ -97,7 +100,7 @@ public class MenuResign extends javax.swing.JPanel {
 
             },
             new String [] {
-                "id", "NIP", "Tanggal Pengajuan", "Tanggal Efektif Resign", "Alasan", "Status"
+                "id", "NIP", "Nama", "Tanggal Pengajuan", "Tanggal Efektif Resign", "Alasan", "Status"
             }
         ));
         tblKaryawan.setRowHeight(40);
@@ -237,9 +240,9 @@ public class MenuResign extends javax.swing.JPanel {
         DialogResignAddEdit dialog = setupDialog();
         String kode = tblKaryawan.getValueAt(row, 0).toString();
         String nip = tblKaryawan.getValueAt(row, 1).toString();
-        String tglPengajuan = tblKaryawan.getValueAt(row, 2).toString();
-        String tglResign = tblKaryawan.getValueAt(row, 3).toString();
-        String alasan = tblKaryawan.getValueAt(row, 4).toString();
+        String tglPengajuan = tblKaryawan.getValueAt(row, 3).toString();
+        String tglResign = tblKaryawan.getValueAt(row, 4).toString();
+        String alasan = tblKaryawan.getValueAt(row, 5).toString();
         dialog.setData(kode, nip, tglPengajuan, tglResign, alasan);
         dialog.setVisible(true);
     }//GEN-LAST:event_btnEditActionPerformed
@@ -385,18 +388,19 @@ public class MenuResign extends javax.swing.JPanel {
         String sql;
 
         if (role.toLowerCase().equals("user")) {
-            sql = "SELECT r.id,r.karyawan_id,r.tanggal_pengajuan,r.tanggal_resign,r.alasan,r.status,k.nip"
+            sql = "SELECT r.id,r.karyawan_id,r.tanggal_pengajuan,r.tanggal_resign,r.alasan,r.status,k.nip,k.nama"
                     + " FROM resign r left join karyawan k on k.id = r.karyawan_id "
                     + " WHERE r.karyawan_id = '" + this.karyawan_id.toString() + "' "
                     + " ORDER BY id DESC";
         } else {
-            sql = "SELECT r.id,r.karyawan_id,r.tanggal_pengajuan,r.tanggal_resign,r.alasan,r.status,k.nip"
+            sql = "SELECT r.id,r.karyawan_id,r.tanggal_pengajuan,r.tanggal_resign,r.alasan,r.status,k.nip,k.nama"
                     + " FROM resign r left join karyawan k on k.id = r.karyawan_id "
                     + " ORDER BY id DESC";
         }
         Object[] Baris = {
             "id	",
             "NIP",
+            "Nama",
             "Tanggal Pengajuan",
             "Tanggal Efektif Resign",
             "Alasan",
@@ -420,6 +424,7 @@ public class MenuResign extends javax.swing.JPanel {
                 String[] data = {
                     hasil.getString("id"),
                     hasil.getString("nip"),
+                    hasil.getString("nama"),
                     hasil.getString("tanggal_pengajuan"),
                     hasil.getString("tanggal_resign"),
                     hasil.getString("alasan"),

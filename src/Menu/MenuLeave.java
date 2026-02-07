@@ -44,6 +44,9 @@ public class MenuLeave extends javax.swing.JPanel {
             btnApprove.setVisible(false);
             btnReject.setVisible(false);
         }
+        else {
+            btnAdd.setVisible(false);
+        }
         loadData();
     }
 
@@ -97,7 +100,7 @@ public class MenuLeave extends javax.swing.JPanel {
 
             },
             new String [] {
-                "id", "NIP", "Tanggal Pengajuan", "Tanggal Mulai", "Tanggal Selesai", "Alasan", "Status"
+                "id", "NIP", "Nama", "Tanggal Pengajuan", "Tanggal Mulai", "Tanggal Selesai", "Alasan", "Status"
             }
         ));
         tblKaryawan.setRowHeight(40);
@@ -237,10 +240,10 @@ public class MenuLeave extends javax.swing.JPanel {
         DialogLeaveAddEdit dialog = setupDialog();
         String kode = tblKaryawan.getValueAt(row, 0).toString();
         String nip = tblKaryawan.getValueAt(row, 1).toString();
-        String tglPengajuan = tblKaryawan.getValueAt(row, 2).toString();
-        String tglMulai = tblKaryawan.getValueAt(row, 3).toString();
-        String tglSelesai = tblKaryawan.getValueAt(row, 4).toString();
-        String alasan = tblKaryawan.getValueAt(row, 5).toString();
+        String tglPengajuan = tblKaryawan.getValueAt(row, 3).toString();
+        String tglMulai = tblKaryawan.getValueAt(row, 4).toString();
+        String tglSelesai = tblKaryawan.getValueAt(row, 5).toString();
+        String alasan = tblKaryawan.getValueAt(row, 6).toString();
         dialog.setData(kode, nip, tglPengajuan, tglMulai, tglSelesai, alasan);
         dialog.setVisible(true);
     }//GEN-LAST:event_btnEditActionPerformed
@@ -386,18 +389,19 @@ public class MenuLeave extends javax.swing.JPanel {
         String sql;
 
         if (role.toLowerCase().equals("user")) {
-            sql = "SELECT c.id,c.karyawan_id,c.tanggal_pengajuan,c.tanggal_mulai,c.tanggal_selesai,c.alasan,c.status,k.nip"
+            sql = "SELECT c.id,c.karyawan_id,c.tanggal_pengajuan,c.tanggal_mulai,c.tanggal_selesai,c.alasan,c.status,k.nip,k.nama"
                     + " FROM cuti c left join karyawan k on k.id = c.karyawan_id "
                     + " WHERE c.karyawan_id = '" + this.karyawan_id.toString() + "' "
                     + " ORDER BY id DESC";
         } else {
-            sql = "SELECT c.id,c.karyawan_id,c.tanggal_pengajuan,c.tanggal_mulai,c.tanggal_selesai,c.alasan,c.status,k.nip"
+            sql = "SELECT c.id,c.karyawan_id,c.tanggal_pengajuan,c.tanggal_mulai,c.tanggal_selesai,c.alasan,c.status,k.nip,k.nama"
                     + " FROM cuti c left join karyawan k on k.id = c.karyawan_id "
                     + " ORDER BY id DESC";
         }
         Object[] Baris = {
             "id	",
             "NIP",
+            "Nama",
             "Tanggal Pengajuan",
             "Tanggal Mulai",
             "Tanggal Selesai",
@@ -422,6 +426,7 @@ public class MenuLeave extends javax.swing.JPanel {
                 String[] data = {
                     hasil.getString("id"),
                     hasil.getString("nip"),
+                    hasil.getString("nama"),
                     hasil.getString("tanggal_pengajuan"),
                     hasil.getString("tanggal_mulai"),
                     hasil.getString("tanggal_selesai"),
