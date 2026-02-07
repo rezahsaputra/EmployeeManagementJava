@@ -747,7 +747,7 @@ public class MainPage extends javax.swing.JFrame {
         if (roleName.toLowerCase().equals("user")) {
             panelContent.add(new MenuAbsensi(fullName, karyawan_id));
         } else {
-            panelContent.add(new MenuHome(fullName));
+            panelContent.add(new MenuAbsensi(fullName, karyawan_id));
         }
 
         panelContent.repaint();
