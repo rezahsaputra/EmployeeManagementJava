@@ -4,9 +4,12 @@
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="42"/>
 	<queryString language="SQL">
-		<![CDATA[SELECT k.nip, a.tanggal_pengajuan, a.tanggal_mulai, a.tanggal_selesai, a.alasan, a.status FROM cuti a LEFT JOIN karyawan k ON k.id = a.karyawan_id ORDER BY a.id DESC;]]>
+		<![CDATA[SELECT k.nip,k.nama, a.tanggal_pengajuan, a.tanggal_mulai, a.tanggal_selesai, a.alasan, a.status FROM cuti a LEFT JOIN karyawan k ON k.id = a.karyawan_id ORDER BY a.id DESC;]]>
 	</queryString>
 	<field name="nip" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="tanggal_pengajuan" class="java.sql.Date">
@@ -58,7 +61,7 @@ www.linkit360.com]]></text>
 	<columnHeader>
 		<band height="61" splitType="Stretch">
 			<staticText>
-				<reportElement x="28" y="41" width="64" height="20" uuid="9b40e19d-465a-4b3c-846f-5ea68064e435"/>
+				<reportElement x="0" y="41" width="52" height="20" uuid="9b40e19d-465a-4b3c-846f-5ea68064e435"/>
 				<box>
 					<pen lineWidth="0.75"/>
 					<topPen lineWidth="0.75"/>
@@ -70,7 +73,7 @@ www.linkit360.com]]></text>
 				<text><![CDATA[NIP]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="92" y="41" width="92" height="20" uuid="c2cc8f75-ed75-4a94-9a67-8ccb018babca"/>
+				<reportElement x="117" y="41" width="92" height="20" uuid="c2cc8f75-ed75-4a94-9a67-8ccb018babca"/>
 				<box>
 					<pen lineWidth="0.75"/>
 					<topPen lineWidth="0.75"/>
@@ -82,7 +85,7 @@ www.linkit360.com]]></text>
 				<text><![CDATA[Tanggal Pengajuan]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="184" y="41" width="92" height="20" uuid="1f051877-7788-47be-96e0-141d3b84621c"/>
+				<reportElement x="209" y="41" width="92" height="20" uuid="1f051877-7788-47be-96e0-141d3b84621c"/>
 				<box>
 					<pen lineWidth="0.75"/>
 					<topPen lineWidth="0.75"/>
@@ -94,7 +97,7 @@ www.linkit360.com]]></text>
 				<text><![CDATA[Tanggal Mulai]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="276" y="41" width="92" height="20" uuid="57b4eaa9-9630-44ec-940c-e45552eeb281"/>
+				<reportElement x="301" y="41" width="92" height="20" uuid="57b4eaa9-9630-44ec-940c-e45552eeb281"/>
 				<box>
 					<pen lineWidth="0.75"/>
 					<topPen lineWidth="0.75"/>
@@ -106,7 +109,7 @@ www.linkit360.com]]></text>
 				<text><![CDATA[Tanggal Selesai]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="368" y="41" width="92" height="20" uuid="82ba0987-fb4d-4c90-bbc6-739909f7c57f"/>
+				<reportElement x="393" y="41" width="92" height="20" uuid="82ba0987-fb4d-4c90-bbc6-739909f7c57f"/>
 				<box>
 					<pen lineWidth="0.75"/>
 					<topPen lineWidth="0.75"/>
@@ -118,7 +121,7 @@ www.linkit360.com]]></text>
 				<text><![CDATA[Alasan]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="460" y="41" width="92" height="20" uuid="8e264b71-c276-4dae-bb4d-d70a3004dc2d"/>
+				<reportElement x="485" y="41" width="67" height="20" uuid="8e264b71-c276-4dae-bb4d-d70a3004dc2d"/>
 				<box>
 					<pen lineWidth="0.75"/>
 					<topPen lineWidth="0.75"/>
@@ -130,7 +133,7 @@ www.linkit360.com]]></text>
 				<text><![CDATA[Status]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="41" width="28" height="20" uuid="deacf6b8-06d3-4af6-a05d-6c4071ee4cd8"/>
+				<reportElement x="52" y="41" width="65" height="20" uuid="d2dd1a0f-0074-4bcd-acde-a8c26e1e3c25"/>
 				<box>
 					<pen lineWidth="0.75"/>
 					<topPen lineWidth="0.75"/>
@@ -139,14 +142,14 @@ www.linkit360.com]]></text>
 					<rightPen lineWidth="0.75"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[No]]></text>
+				<text><![CDATA[Nama]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
 		<band height="20" splitType="Stretch">
 			<textField>
-				<reportElement x="28" y="0" width="64" height="20" uuid="db2be19a-2b3b-404d-bcf7-9e0ca8f733ed"/>
+				<reportElement x="0" y="0" width="52" height="20" uuid="db2be19a-2b3b-404d-bcf7-9e0ca8f733ed"/>
 				<box>
 					<pen lineWidth="0.75"/>
 					<topPen lineWidth="0.75"/>
@@ -158,7 +161,7 @@ www.linkit360.com]]></text>
 				<textFieldExpression><![CDATA[$F{nip}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="92" y="0" width="92" height="20" uuid="c1696e88-bfb0-4bed-bacd-7da86cd42bbb"/>
+				<reportElement x="117" y="0" width="92" height="20" uuid="c1696e88-bfb0-4bed-bacd-7da86cd42bbb"/>
 				<box>
 					<pen lineWidth="0.75"/>
 					<topPen lineWidth="0.75"/>
@@ -170,7 +173,7 @@ www.linkit360.com]]></text>
 				<textFieldExpression><![CDATA[$F{tanggal_pengajuan}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="184" y="0" width="92" height="20" uuid="ff7810b5-426d-49ab-a7e1-ec13245a5a29"/>
+				<reportElement x="209" y="0" width="92" height="20" uuid="ff7810b5-426d-49ab-a7e1-ec13245a5a29"/>
 				<box>
 					<pen lineWidth="0.75"/>
 					<topPen lineWidth="0.75"/>
@@ -182,7 +185,7 @@ www.linkit360.com]]></text>
 				<textFieldExpression><![CDATA[$F{tanggal_mulai}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="276" y="0" width="92" height="20" uuid="9cd73ccc-ea1c-4a9c-8548-5e4078f8e2aa"/>
+				<reportElement x="301" y="0" width="92" height="20" uuid="9cd73ccc-ea1c-4a9c-8548-5e4078f8e2aa"/>
 				<box>
 					<pen lineWidth="0.75"/>
 					<topPen lineWidth="0.75"/>
@@ -194,7 +197,7 @@ www.linkit360.com]]></text>
 				<textFieldExpression><![CDATA[$F{tanggal_selesai}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="368" y="0" width="92" height="20" uuid="fa423e43-7248-44b4-a4cc-f9d35e2832bc"/>
+				<reportElement x="393" y="0" width="92" height="20" uuid="fa423e43-7248-44b4-a4cc-f9d35e2832bc"/>
 				<box>
 					<pen lineWidth="0.75"/>
 					<topPen lineWidth="0.75"/>
@@ -206,7 +209,7 @@ www.linkit360.com]]></text>
 				<textFieldExpression><![CDATA[$F{alasan}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="460" y="0" width="92" height="20" uuid="62aecd07-af44-4aca-b4d9-7f73fd2e4e97"/>
+				<reportElement x="485" y="0" width="67" height="20" uuid="62aecd07-af44-4aca-b4d9-7f73fd2e4e97"/>
 				<box>
 					<pen lineWidth="0.75"/>
 					<topPen lineWidth="0.75"/>
@@ -218,7 +221,7 @@ www.linkit360.com]]></text>
 				<textFieldExpression><![CDATA[$F{status}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="0" y="0" width="28" height="20" uuid="14616c64-cb00-4883-a50c-5cafd95f9025"/>
+				<reportElement x="52" y="0" width="65" height="20" uuid="c911161d-8ce6-41fa-9d6b-4ed45aeadd0a"/>
 				<box>
 					<pen lineWidth="0.75"/>
 					<topPen lineWidth="0.75"/>
@@ -227,7 +230,7 @@ www.linkit360.com]]></text>
 					<rightPen lineWidth="0.75"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$V{COLUMN_COUNT}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

@@ -9,6 +9,9 @@
 	<field name="nip" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
+	<field name="nama" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
 	<field name="bulan" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
